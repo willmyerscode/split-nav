@@ -24,7 +24,7 @@
   
   //Move Stylesheet
   function moveStylesheet() {
-    let stylesheet = document.querySelector('link[href*="/SplitNav"]');
+    let stylesheet = document.querySelector('link[href*="/splitNav"]');
     if (!stylesheet) return;
     document.head.prepend(stylesheet);
   }
