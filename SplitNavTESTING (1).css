@@ -1,0 +1,89 @@
+/**
+ * Split Navigation for Squarespace
+ * This Code is Licensed by Will-Myers.com
+*/
+.header {
+  --right-nav-links: 1;
+  --link-spacing: 1.3rem;
+  --site-title-width: 200px;
+  --side-width: calc((100% - var(--site-title-width)) / 2);
+  --title-nav-width: calc(var(--side-width) + var(--site-title-width));
+}
+
+/*Getting the Spacing to Work*/
+#header.wm-split-nav .header-title-nav-wrapper{
+  flex: 1 1 var(--title-nav-width);
+}
+#header.wm-split-nav .header-nav {
+  width: unset;
+  flex: 1 1 var(--side-width);
+}
+#header.wm-split-nav .header-display-desktop .header-title{
+  width: var(--site-title-width);
+  flex: unset;
+  padding: 0 var(--title-spacing, var(--link-spacing));
+  box-sizing: border-box;
+}
+#header.wm-split-nav .header-display-desktop .header-actions--right{
+  flex: 1 0 var(--side-width);
+  width: 100%;
+}
+#header.wm-split-nav .header-display-desktop .header-title-logo img,
+#header.wm-split-nav .header-display-desktop .header-title-logo a{
+  max-height:unset;
+}
+
+/*Right Nav Size*/
+.wm-split-nav .header-nav{
+  flex: 1;  
+}
+.wm-split-nav .header-nav-list{
+  flex:1;
+  display:flex;
+}
+
+/*Social Links*/
+.wm-split-nav .header-actions-action--social{
+  display:inline-flex;
+}
+.wm-split-nav .header-actions--right .header-actions-action--social .icon:first-child {
+  margin-left:unset;
+}
+
+/*Fade In New Nav on Load*/
+.header-nav-list, .header-actions{
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.wm-split-nav .header-nav-list, 
+.wm-split-nav .header-actions{
+  opacity: 1;
+}
+
+.header-nav-list {
+  display: flex;
+  gap: 0 var(--link-spacing);
+}
+.wm-split-nav .header-nav-list .header-nav-item{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.wm-split-nav .header-actions--right .header-actions-action {
+  margin-right: unset;
+  margin-left: var(--link-spacing);
+}
+
+.wm-split-nav .header-nav-list--right{
+  justify-content:var(--right-alignment);
+}
+.wm-split-nav .header-nav-list:not(.header-nav-list--right) {
+  display:flex;
+  justify-content:var(--left-alignment);
+}
+
+body.no-flexbox-gap .header-nav-list:not(.header-nav-list--right) .header-nav-item:not(:last-child){
+  margin-right: var(--link-spacing) !important;
+}
+body.no-flexbox-gap .header-nav-list.header-nav-list--right .header-nav-item:not(:first-child){
+  margin-left: var(--link-spacing) !important;
+}
