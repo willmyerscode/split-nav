@@ -52,7 +52,6 @@
     return isSupported;
   }
   if (!checkFlexGap()) {
-    console.log('no Gap :(')
     document.body.classList.add("no-flexbox-gap");
 
     let header = document.querySelector('#header')
@@ -71,10 +70,7 @@
     } else if (rightAlign == 'left'){
       rightAlign = 'flex-start';
     }
-    console.log(leftAlign)
-    console.log(rightAlign)
 
-    
     header.style.setProperty('--left-alignment', leftAlign);
     header.style.setProperty('--right-alignment', rightAlign)
   }
