@@ -4,13 +4,13 @@
 ========== */
 (function(){ 
   moveStylesheet();
-
+  
   let header = document.querySelector('#header'),
       navList = header.querySelector('.header-display-desktop .header-nav-list'),
       headerStyles = window.getComputedStyle(header),
       rightNavLinkCount = headerStyles.getPropertyValue('--right-nav-links'),
       rightNavLinks = navList.querySelectorAll(`:scope > *:nth-of-type(n+${navList.children.length - parseInt(rightNavLinkCount) + 1})`),
-      headerActionsRight = header.querySelector('.header-actions--right');
+      headerActionsRight = header.querySelector('.header-announcement-bar-wrapper .header-actions--right');
 
   //Add Unique Targeting Class
   header.classList.add('wm-split-nav')
